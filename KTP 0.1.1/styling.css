@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+
+:root {
+    --clr-light: rgb(152, 203, 220);
+    --clr-light-2: rgb(99, 166, 188);
+    --clr-light-3: rgb(69, 136, 159);
+    --clr-primary: rgb(27, 53, 71);
+    --clr-red: rgb(193, 26, 26);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    padding: 1.5rem 1rem;
+    background-color: var(--clr-light);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-weight: 600;
+}
+
+.logo img {
+    max-width: 100%;
+    width: 250px;
+}
+.fa-bars,
+.fa-circle-xmark {
+    opacity: 0;
+}
+
+ul li {
+    display: inline-block;
+    position: relative;
+}
+
+ul li a {
+    display: block;
+    padding: 15px 20px;
+    /* color: #fff; */
+    color: var(--clr-primary);
+    text-align: center;
+    transition: transform 150ms ease-in;
+
+}
+.fa-caret-down {
+    /* color: #fff; */
+    color: var(--clr-primary)
+}
+.drop--items li {
+    display: block;
+}
+.drop--items {
+    width: 100%;
+    background-color: var(--clr-light-2);
+    /* background-color: darkgreen; */
+    position: absolute;
+    z-index: 10;
+    display: none;
+}
+
+ul li a:hover,
+ul li a:hover > .fa-caret-down{
+    /* color: rgb(0, 61, 0); */
+    color: #e5e5e5;
+    /* transform: scale(1.1); */
+}
+
+ul li:hover .drop--items {
+    display: block;
+}
+
+.drop--items li:hover {
+    background-color: var(--clr-light-3)
+}
+
+
+@media screen and (max-width:665px) {
+    header {
+        position: relative;
+    }
+    .nav--items {
+        position: fixed;
+        right: -100%;
+        transition: all 200ms ease-in;
+    }
+    .nav--items-show {
+        right: 0;
+    }
+    .fa-bars {
+        font-size: 20px;
+        position: absolute;
+        opacity: 1;
+        /* color: white; */
+        right: 3.1rem;
+        top: 2.2rem;
+        cursor: pointer;
+        color: var(--clr-primary)
+    }
+    .fa-circle-xmark {
+        padding-top: 2rem;
+        padding-bottom: 1rem;
+        opacity: 1;
+        color: white;
+        font-size: 25px;
+        cursor: pointer;
+        color: var(--clr-red);
+    }
+
+    .fa-circle-xmark:hover {
+        /* position: relative; */
+        /* transform: scale(1.4) translateY(-3.6px); */
+    }
+    .fa-bars:hover {
+        /* transform: scale(1.3); */
+    }
+    ul {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: 0;
+        background-color: var(--clr-light-2);
+        text-align: center;
+    }
+    ul:not(.drop--items) {
+        height: 100vh;
+    }
+    ul li a,
+    .fa-caret-down {
+        color: var(--clr-primary)
+    }
+
+    .drop--items {
+        background-color: var(--clr-light-2);
+        top: 0;
+        right: 7rem;
+    }
+}
+
+
+.container {
+    /* border: 1px solid black; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 10px auto;
+    padding: 1rem;
+    text-align: justify;
+}
+.container img {
+    max-width: 100%;
+    width: 100px;
+}
+.box {
+    /* border: 1px solid black; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 10px auto;
+    padding: 1rem;
+    text-align: justify;
+}
+.log {
+    width: 230px;
+}
+
+footer {
+    width: 100%;
+    font-size: 0.75rem;
+    background-color: var(--clr-primary);
+    color: var(--clr-light);
+    padding: 3rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.foot {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.foot span {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+}
